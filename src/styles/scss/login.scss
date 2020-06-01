@@ -43,6 +43,9 @@
 
 .login-page {
   position: relative;
+  width: 800px;
+  height: 380px;
+  margin-top: 10%;
 }
 
 .login-page-center-div {
@@ -56,4 +59,8 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.password-alert {
+  margin-top: 10px;
 }

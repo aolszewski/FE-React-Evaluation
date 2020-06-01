@@ -1,33 +1,53 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, FormGroup } from 'reactstrap';
+import { Form, Input, Button, FormGroup, Alert } from 'reactstrap';
 import { withRouter } from 'react-router-dom';
 import { shape, func } from 'prop-types';
+import { connect } from 'react-redux';
+import classnames from 'classnames';
+
+import { loginSuccess } from '../actions/user';
+import { passwordRegex } from '../constants';
+import logo from '../images/noinc-logo.png';
 
 class LoginPage extends Component {
   static propTypes = {
     history: shape({
       push: func.isRequired,
     }),
+    dispatchLoginSuccess: func.isRequired,
   };
 
   constructor(props) {
     super(props);
 
+    this.state = { loginFailed: false };
+
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   onSubmit(e) {
-    const { history } = this.props;
+    const { history, dispatchLoginSuccess } = this.props;
 
     e.preventDefault();
-    console.log('on submit');
-    console.log('userName: ', this.username.value);
-    console.log('password: ', this.password.value);
 
-    history.push('/home');
+
+    console.log('password: ', this.password.value);
+    console.log('passwordTest: ', this.password.value.match(passwordRegex));
+
+    // we don't want to give the end user any indication of why their login
+    // failed so both cases are treated the same, just display the login
+    // failed alert
+    if (!this.username.value || !this.password.value.match(passwordRegex)) {
+      this.setState({ loginFailed: true })
+    } else {
+      dispatchLoginSuccess(this.username.value);
+      history.push('/home');
+    }
   }
 
   render() {
+    const { loginFailed } = this.state;
+
     return (
       <div className="container login-page">
         <div className="login-page-child-center-div">
@@ -35,7 +55,8 @@ class LoginPage extends Component {
             <div className="col-md-6 login-image-container">
               <div className="login-image-div">
                 <img
-                  src="https://d1icd6shlvmxi6.cloudfront.net/gsc/1UCI4I/a5/c4/69/a5c46955c1b64ac8898236ceb4c3ccb2/images/login/u7.png?token=33238497eb65759807fa096cca504da6e7dacfb38fd1c967b563dfa20ef01f27"  alt="Login Image"
+                  src={logo}
+                  alt="Login Image"
                   className="login-image"
                 />
               </div>
@@ -62,6 +83,12 @@ class LoginPage extends Component {
                       className="login-input"
                     />
                     <Button className="login-button">Login</Button>
+                    <Alert
+                      color="danger"
+                      className={classnames('password-alert', { hidden: !loginFailed} )}
+                    >
+                      The username or password is incorrect.
+                    </Alert>
                   </FormGroup>
                 </Form>
               </div>
@@ -73,4 +100,14 @@ class LoginPage extends Component {
   }
 }
 
-export default withRouter(LoginPage);
+const mapStateToProps = state => ({
+
+});
+
+const matchDispatchToProps = dispatch => ({
+  dispatchLoginSuccess(userName) {
+    dispatch(loginSuccess(userName));
+  }
+});
+
+export default connect(mapStateToProps, matchDispatchToProps)(withRouter(LoginPage));

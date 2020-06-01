@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers';
+import { fakeInterests, fakeSkills } from "./dummy-data";
 
 const logger = createLogger({ collapsed: true });
 
@@ -19,5 +20,7 @@ export const configureStore = (state = initialState) => {
 export const initialState = {
   user: {
     userName: ''
-  }
+  },
+  skills: fakeSkills,
+  interests: fakeInterests,
 };
