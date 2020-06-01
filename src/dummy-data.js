@@ -7,35 +7,40 @@ export const fakeInterests = [
         name: 'Soccer',
         type: 'Sport',
         current: true,
-        detail: 'Soccer is a Sport and Sports are cool'
+        detail: 'Soccer is a Sport and Sports are cool',
+        color: 'primary'
     },
     {
         id: 2,
         name: 'Football',
         type: 'Sport',
         current: true,
-        detail: 'Football is a Sport and Sports are physical'
+        detail: 'Football is a Sport and Sports are physical',
+        color: 'secondary'
     },
     {
         id: 3,
         name: 'Chess',
         type: 'Game',
         current: false,
-        detail: 'Chess is a game and games are fun'
+        detail: 'Chess is a game and games are fun',
+        color: 'success'
     },
     {
         id: 4,
         name: 'Racing',
         type: 'Sport',
         current: false,
-        detail: 'Racing is a loud sport'
+        detail: 'Racing is a loud sport',
+        color: 'danger'
     },
     {
         id: 5,
         name: 'Horseback Riding',
         type: 'Sport',
         current: true,
-        detail: 'Horseback Riding is an ancient sport'
+        detail: 'Horseback Riding is an ancient sport',
+        color: 'info'
     }
 ];
 

@@ -1,6 +1,10 @@
 @import "../../../node_modules/bootstrap/dist/css/bootstrap.css";
-@import './login.scss';
-@import './nav.scss';
+@import './login';
+@import './nav';
+@import './home';
+@import './interest';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body {
   font-family: 'Open Sans', sans-serif;

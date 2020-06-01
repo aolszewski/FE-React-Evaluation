@@ -5,9 +5,9 @@ import { shape, func } from 'prop-types';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 
-import { loginSuccess } from '../actions/user';
-import { passwordRegex } from '../constants';
-import logo from '../images/noinc-logo.png';
+import { loginSuccess } from '../../actions/user';
+import { passwordRegex } from '../../constants';
+import logo from '../../images/noinc-logo.png';
 
 class LoginPage extends Component {
   static propTypes = {

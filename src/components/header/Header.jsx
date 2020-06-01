@@ -6,7 +6,7 @@ import { Navbar, Nav, NavItem, NavLink } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-import logo from '../images/noinc-logo.png';
+import logo from '../../images/noinc-logo.png';
 
 class Header extends Component {
   static propTypes = {

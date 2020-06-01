@@ -4,8 +4,8 @@ import {
   Switch
 } from 'react-router-dom';
 
-import Login from './login';
-import HomePage from './home';
+import Login from './components/login/Login';
+import HomePage from './components/home/Home';
 
 import './styles/css/App.css';
 

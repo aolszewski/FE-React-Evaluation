@@ -1,0 +1,21 @@
+.interest-card-title {
+  color: #ec8643;
+  font-weight: 700;
+}
+
+.interest-label {
+  font-weight: bold;
+}
+
+.interest-card-container {
+  border-width: 10px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-radius: 0;
+
+  background-color: #f4f9fd;
+
+  :hover {
+    border-color: #ec8643;
+  }
+}
