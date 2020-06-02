@@ -1,63 +1,79 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
+import { shape, string, array } from 'prop-types';
+import { Badge } from 'reactstrap';
+import Header from '../header/Header';
 
-import { Card, CardBody, CardTitle, Badge } from 'reactstrap';
-
-import {
-  shape,
-  number,
-  string,
-  bool,
-} from 'prop-types';
-
-export default class Interest extends PureComponent {
+class Interest extends PureComponent {
   static propTypes = {
-    interest: shape({
-      id: number.isRequired,
-      name: string.isRequired,
-      type: string.isRequired,
-      current: bool.isRequired,
-      detail: string.isRequired,
-      color: string.isRequired,
+    interests: array.isRequired,
+    match: shape({
+      params: shape({
+        id: string,
+      })
     }).isRequired,
-    index: number.isRequired,
   };
 
-  render() {
+  constructor(props) {
+    super(props);
+
+    this.getInterest = this.getInterest.bind(this);
+  }
+
+  getInterest() {
     const {
-      interest: {
-        name,
-        type,
-        color,
+      interests,
+      match: {
+        params: {
+          id
+        },
       },
-      index,
     } = this.props;
 
+    const idAsInt = parseInt(id, 10);
+    return interests.find(interest => interest.id === idAsInt);
+  }
+
+  render () {
+    const {
+      name,
+      type,
+      detail,
+      color,
+    } = this.getInterest();
+
     return (
-      <div className="interest-card-container">
-        <div className="interest-card-border">
-          <Card className="interest-card">
-            <CardBody className="interest-card-body">
-              <CardTitle className="interest-card-title">Interest { index }</CardTitle>
-              <div className="row interest-card-row">
-                <div className="col-md-4 interest-label">
-                  NAME:
-                </div>
-                <div className="col-md-8">
-                  { name }
-                </div>
-              </div>
-              <div className="row interest-card-row">
-                <div className="col-md-4 interest-label">
-                  TYPE:
-                </div>
-                <div className="col-md-8">
-                  <Badge color={color}>{ type }</Badge>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
+      <React.Fragment>
+        <Header />
+        <div className="interest-container">
+          <div className="row interest-row">
+            <div className="col-md-2" />
+            <div className="col-md-10">
+              <h1>{name}</h1>
+            </div>
+          </div>
+          <div className="row interest-row">
+            <div className="col-md-2" />
+            <div className="col-md-10">
+              <h4>
+                <Badge className="interest-badge" color={color}>{type}</Badge>
+              </h4>
+            </div>
+          </div>
+          <div className="row interest-row">
+            <div className="col-md-2" />
+            <div className="col-md-10">
+              { detail }
+            </div>
+          </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  interests: state.interests,
+});
+
+export default connect(mapStateToProps)(Interest);

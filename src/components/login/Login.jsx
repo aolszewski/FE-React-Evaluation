@@ -30,10 +30,6 @@ class LoginPage extends Component {
 
     e.preventDefault();
 
-
-    console.log('password: ', this.password.value);
-    console.log('passwordTest: ', this.password.value.match(passwordRegex));
-
     // we don't want to give the end user any indication of why their login
     // failed so both cases are treated the same, just display the login
     // failed alert

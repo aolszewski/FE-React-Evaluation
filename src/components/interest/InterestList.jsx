@@ -3,7 +3,7 @@ import { array } from 'prop-types';
 import { connect } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 
-import Interest from './Interest';
+import InterestCard from './InterestCard';
 
 import { CHUNK_SIZE } from '../../constants';
 
@@ -42,10 +42,10 @@ class InterestList extends PureComponent {
     return (
       <div className="container">
         { chunkedArray.map((row) => (
-          <div className="row interest-row" key={uuid()}>
+          <div className="row interest-list-row" key={uuid()}>
             { row.map((el) => (
               <div className="col-md-4" key={uuid()}>
-                <Interest interest={el} index={el.index} />
+                <InterestCard interest={el} index={el.index} />
               </div>
             ))}
           </div>
