@@ -32,7 +32,7 @@ class InterestList extends PureComponent {
         { chunkedArray.map((row) => (
           <div className="row interest-list-row" key={uuid()}>
             { row.map((el) => (
-              <div className="col-md-4" key={uuid()}>
+              <div className="col-md-4 interest-column" key={uuid()}>
                 <InterestCard interest={el} index={el.index} />
               </div>
             ))}

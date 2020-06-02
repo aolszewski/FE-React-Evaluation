@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { shape, string, array } from 'prop-types';
 
-import { Badge } from 'react-bootstrap';
+import { Badge } from 'reactstrap';
 
 import Header from '../header/Header';
 
@@ -51,13 +51,13 @@ class Skill extends PureComponent {
         <div className="skill-container">
           <div className="row skill-row">
             <div className="col-md-2" />
-            <div className="cold-md-10">
-              <h1>{ name }</h1>
+            <div className="cold-md-10 skill-value">
+              <h2>{ name }</h2>
             </div>
           </div>
           <div className="row skill-row">
             <div className="col-md-2" />
-            <div className="col-md-10">
+            <div className="col-md-10 skill-value">
               <h4>
                 <Badge className="skill-badge" color={color}>{ type }</Badge>
               </h4>
@@ -65,13 +65,13 @@ class Skill extends PureComponent {
           </div>
           <div className="row skill-row">
             <div className="col-md-2" />
-            <div className="col-md-10">
+            <div className="col-md-10 skill-value">
               { dateLearned }
             </div>
           </div>
           <div className="row skill-row">
             <div className="col-md-2" />
-            <div className="col-md-10">
+            <div className="col-md-10 skill-value">
               { detail }
             </div>
           </div>

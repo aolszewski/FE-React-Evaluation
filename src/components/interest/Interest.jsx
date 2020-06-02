@@ -49,7 +49,7 @@ class Interest extends PureComponent {
           <div className="row interest-row">
             <div className="col-md-2" />
             <div className="col-md-10">
-              <h1>{ name }</h1>
+              <h2>{ name }</h2>
             </div>
           </div>
           <div className="row interest-row">
