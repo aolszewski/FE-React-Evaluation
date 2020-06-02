@@ -101,7 +101,7 @@ class Header extends Component {
             <NavLink tag={Link} to="/home">
               <span className="ni-nav-link user-link">
                 <FontAwesomeIcon icon={faUser} />
-                &nbsp;
+                &nbsp;&nbsp;&nbsp;
                 { userName }
               </span>
             </NavLink>

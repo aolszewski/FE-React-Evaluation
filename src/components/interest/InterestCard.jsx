@@ -70,7 +70,7 @@ class InterestCard extends PureComponent {
                   TYPE:
                 </div>
                 <div className="col-md-8">
-                  <Badge color={color}>{ type }</Badge>
+                  <Badge color={color} className="interest-card-badge">{ type }</Badge>
                 </div>
               </div>
             </CardBody>
