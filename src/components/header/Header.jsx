@@ -42,7 +42,7 @@ class Header extends Component {
 
     return (
       <Navbar color="dark" dark expand="md" className="justify-content-end">
-        <Nav className="mr-auto">
+        <Nav className="mr-auto nav-image-left">
           <NavItem className="pull-left nav-logo-container">
             <img src={logo} alt="logo" className="nav-logo"/>
           </NavItem>

@@ -22,7 +22,7 @@ class InterestCard extends PureComponent {
     index: number.isRequired,
     history: shape({
       push: func.isRequired,
-    }),
+    }).isRequired,
   };
 
   constructor(props) {

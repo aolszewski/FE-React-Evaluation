@@ -49,35 +49,35 @@ export const fakeSkills = [
         id: 1,
         name: 'Reading',
         type: 'Essential',
-        DateLearned: moment().subtract(Age, 'years').add(2, 'years').format(),
+        dateLearned: moment().subtract(Age, 'years').add(2, 'years').format(),
         detail: 'Reading is essential and fun'
     },
     {
         id: 2,
         name: 'Writing',
         type: 'Essential',
-        DateLearned: moment().subtract(Age, 'years').add(2, 'years').format(),
+        dateLearned: moment().subtract(Age, 'years').add(2, 'years').format(),
         detail: 'Writing is essential and fun'
     },
     {
         id: 3,
         name: 'Riding A Bike',
         type: 'Practical',
-        DateLearned: moment().subtract(Age, 'years').add(5, 'years').format(),
+        dateLearned: moment().subtract(Age, 'years').add(5, 'years').format(),
         detail: 'Riding A Bike is not essential'
     },
     {
         id: 4,
         name: 'Driving A Car',
         type: 'Practical',
-        DateLearned: moment().subtract(Age, 'years').add(16, 'years').format(),
+        dateLearned: moment().subtract(Age, 'years').add(16, 'years').format(),
         detail: 'Driving A Car is essential in some countries'
     },
     {
         id: 5,
         name: 'Coding',
         type: 'Professional',
-        DateLearned: moment().subtract(Age, 'years').add(24, 'years').format(),
+        dateLearned: moment().subtract(Age, 'years').add(24, 'years').format(),
         detail: 'Coding is profitable'
     }
 ];

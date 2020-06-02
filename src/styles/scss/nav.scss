@@ -15,6 +15,7 @@
 
 .nav-logo-container {
   background-color: #5C6F7D;
+  padding: 16px;
 }
 
 .nav-separator {
@@ -23,4 +24,10 @@
 
 .nav-active {
   border-bottom: 5px solid #ec8643;
+}
+
+.nav-image-left {
+  margin-top: -10px;
+  margin-bottom: -8px;
+  margin-left: -15px;
 }
