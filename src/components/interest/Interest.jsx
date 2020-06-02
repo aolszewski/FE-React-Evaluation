@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import { Card, CardBody, CardTitle, CardText } from 'reactstrap';
+import { Card, CardBody, CardTitle, Badge } from 'reactstrap';
 
 import {
   shape,
@@ -27,17 +27,18 @@ export default class Interest extends PureComponent {
       interest: {
         name,
         type,
+        color,
       },
       index,
     } = this.props;
 
     return (
       <div className="interest-card-container">
-        <Card>
-          <CardBody>
-            <CardTitle className="interest-card-title">Interest { index }</CardTitle>
-            <CardText>
-              <div className="row">
+        <div className="interest-card-border">
+          <Card className="interest-card">
+            <CardBody className="interest-card-body">
+              <CardTitle className="interest-card-title">Interest { index }</CardTitle>
+              <div className="row interest-card-row">
                 <div className="col-md-4 interest-label">
                   NAME:
                 </div>
@@ -45,17 +46,17 @@ export default class Interest extends PureComponent {
                   { name }
                 </div>
               </div>
-              <div className="row">
+              <div className="row interest-card-row">
                 <div className="col-md-4 interest-label">
                   TYPE:
                 </div>
                 <div className="col-md-8">
-                  { type }
+                  <Badge color={color}>{ type }</Badge>
                 </div>
               </div>
-            </CardText>
-          </CardBody>
-        </Card>
+            </CardBody>
+          </Card>
+        </div>
       </div>
     );
   }

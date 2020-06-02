@@ -7,15 +7,34 @@
   font-weight: bold;
 }
 
+.interest-card-body {
+  width: 355px;
+  height: 220px;
+}
+
+.interest-card {
+  background-color: #f4f9fd;
+  border: none;
+}
+
+.interest-card-row {
+  margin-top: 10px;
+}
+
 .interest-card-container {
-  border-width: 10px;
-  border-style: solid;
-  border-color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.interest-row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.interest-card-border {
+  border: 10px solid white;
   border-radius: 0;
 
-  background-color: #f4f9fd;
-
-  :hover {
-    border-color: #ec8643;
+  &:hover {
+    border: 10px solid #ec8643;
   }
 }
