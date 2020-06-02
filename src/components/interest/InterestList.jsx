@@ -6,6 +6,7 @@ import { v4 as uuid } from 'uuid';
 import InterestCard from './InterestCard';
 
 import { CHUNK_SIZE } from '../../constants';
+import { chunkArray } from '../../helpers';
 
 class InterestList extends PureComponent {
   static propTypes = {
@@ -20,20 +21,7 @@ class InterestList extends PureComponent {
 
   chunkArray() {
     let { interests } = this.props;
-    interests = interests.map((interest, index) => {
-      const modifiedInterest = interest;
-      modifiedInterest.index = index + 1;
-      return modifiedInterest;
-    });
-    let chunkedArray = [];
-
-    let index = 0;
-    while (index < interests.length) {
-      chunkedArray.push(interests.slice(index, CHUNK_SIZE + index));
-      index += CHUNK_SIZE;
-    }
-
-    return chunkedArray;
+    return chunkArray(interests, CHUNK_SIZE);
   }
 
   render () {

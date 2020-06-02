@@ -30,9 +30,9 @@ class Header extends Component {
 
     if (page === 'home') {
       isActive = pathname.startsWith('/home') || pathname.startsWith('/interest');
+    } else if (page === 'skill') {
+      isActive = pathname.startsWith('/skill');
     }
-
-    console.log('isActive: ', isActive);
 
     return isActive;
   }
@@ -70,9 +70,9 @@ class Header extends Component {
             </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink tag={Link} to="/home">
-              <span className="ni-nav-link">
-                Navigation 2
+            <NavLink tag={Link} to="/skills">
+              <span className={classnames('ni-nav-link', { 'nav-active': this.isActiveLink('skill') })}>
+                Skills
               </span>
             </NavLink>
           </NavItem>

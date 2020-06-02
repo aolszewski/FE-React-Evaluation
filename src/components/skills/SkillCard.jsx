@@ -11,6 +11,7 @@ import {
   CardTitle,
   Badge,
 } from 'reactstrap';
+import { withRouter } from 'react-router-dom';
 
 class SkillCard extends PureComponent {
   static propTypes = {
@@ -46,7 +47,10 @@ class SkillCard extends PureComponent {
   render() {
     const {
       skill: {
-
+        name,
+        type,
+        color,
+        dateLearned,
       },
       index,
     } = this.props;
@@ -67,7 +71,18 @@ class SkillCard extends PureComponent {
               </div>
               <div className="row skill-card-row">
                 <div className="col-md-4 skill-label">
-                  
+                  TYPE:
+                </div>
+                <div className="col-md-8">
+                  <Badge color={color} className="interest-card-badge">{ type }</Badge>
+                </div>
+              </div>
+              <div className="row skill-card-row">
+                <div className="col-md-4 skill-label">
+                  DATE LEARNED:
+                </div>
+                <div className="col-md-8">
+                  { dateLearned }
                 </div>
               </div>
             </CardBody>
@@ -77,3 +92,5 @@ class SkillCard extends PureComponent {
     );
   }
 }
+
+export default withRouter(SkillCard);

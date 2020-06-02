@@ -1,4 +1,5 @@
-import moment from "moment";
+import moment from 'moment';
+import { DATE_FORMAT } from './constants';
 
 const Age = 30;
 export const fakeInterests = [
@@ -49,36 +50,41 @@ export const fakeSkills = [
         id: 1,
         name: 'Reading',
         type: 'Essential',
-        dateLearned: moment().subtract(Age, 'years').add(2, 'years').format(),
-        detail: 'Reading is essential and fun'
+        dateLearned: moment().subtract(Age, 'years').add(2, 'years').format(DATE_FORMAT),
+        detail: 'Reading is essential and fun',
+        color: 'primary'
     },
     {
         id: 2,
         name: 'Writing',
         type: 'Essential',
-        dateLearned: moment().subtract(Age, 'years').add(2, 'years').format(),
-        detail: 'Writing is essential and fun'
+        dateLearned: moment().subtract(Age, 'years').add(2, 'years').format(DATE_FORMAT),
+        detail: 'Writing is essential and fun',
+        color: 'secondary'
     },
     {
         id: 3,
         name: 'Riding A Bike',
         type: 'Practical',
-        dateLearned: moment().subtract(Age, 'years').add(5, 'years').format(),
-        detail: 'Riding A Bike is not essential'
+        dateLearned: moment().subtract(Age, 'years').add(5, 'years').format(DATE_FORMAT),
+        detail: 'Riding A Bike is not essential',
+        color: 'success'
     },
     {
         id: 4,
         name: 'Driving A Car',
         type: 'Practical',
-        dateLearned: moment().subtract(Age, 'years').add(16, 'years').format(),
-        detail: 'Driving A Car is essential in some countries'
+        dateLearned: moment().subtract(Age, 'years').add(16, 'years').format(DATE_FORMAT),
+        detail: 'Driving A Car is essential in some countries',
+        color: 'danger'
     },
     {
         id: 5,
         name: 'Coding',
         type: 'Professional',
-        dateLearned: moment().subtract(Age, 'years').add(24, 'years').format(),
-        detail: 'Coding is profitable'
+        dateLearned: moment().subtract(Age, 'years').add(24, 'years').format(DATE_FORMAT),
+        detail: 'Coding is profitable',
+        color: 'info'
     }
 ];
 

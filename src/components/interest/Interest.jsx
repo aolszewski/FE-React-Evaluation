@@ -25,7 +25,7 @@ class Interest extends PureComponent {
       interests,
       match: {
         params: {
-          id
+          id,
         },
       },
     } = this.props;
@@ -49,14 +49,14 @@ class Interest extends PureComponent {
           <div className="row interest-row">
             <div className="col-md-2" />
             <div className="col-md-10">
-              <h1>{name}</h1>
+              <h1>{ name }</h1>
             </div>
           </div>
           <div className="row interest-row">
             <div className="col-md-2" />
             <div className="col-md-10">
               <h4>
-                <Badge className="interest-badge" color={color}>{type}</Badge>
+                <Badge className="interest-badge" color={color}>{ type }</Badge>
               </h4>
             </div>
           </div>
