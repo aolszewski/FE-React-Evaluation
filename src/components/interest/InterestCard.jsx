@@ -8,6 +8,7 @@ import {
   bool,
   func,
 } from 'prop-types';
+import NiCard from "../NiCard";
 
 class InterestCard extends PureComponent {
   static propTypes = {
@@ -43,40 +44,16 @@ class InterestCard extends PureComponent {
 
   render() {
     const {
-      interest: {
-        name,
-        type,
-        color,
-      },
+      interest,
       index,
     } = this.props;
 
     return (
-      <div className="interest-card-container">
-        <div className="interest-card-border">
-          <Card className="interest-card" onClick={this.drillDownOnInterest}>
-            <CardBody className="interest-card-body">
-              <CardTitle className="interest-card-title">Interest { index }</CardTitle>
-              <div className="row interest-card-row">
-                <div className="col-md-4 interest-label">
-                  NAME:
-                </div>
-                <div className="col-md-8">
-                  { name }
-                </div>
-              </div>
-              <div className="row interest-card-row">
-                <div className="col-md-4 interest-label">
-                  TYPE:
-                </div>
-                <div className="col-md-8">
-                  <Badge color={color} className="interest-card-badge">{ type }</Badge>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
-        </div>
-      </div>
+      <NiCard
+        cardDetails={interest}
+        index={index}
+        drillDown={this.drillDownOnInterest}
+      />
     );
   }
 }

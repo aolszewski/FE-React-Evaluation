@@ -1,0 +1,39 @@
+.ni-card-container {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.ni-card-border {
+  border: 10px solid white;
+  border-radius: 0;
+
+  &:hover {
+    border: 10px solid #ec8643;
+  }
+}
+
+.ni-card {
+  background-color: #f4f9fd;
+  border: none;
+}
+
+.ni-card-body {
+  width: 335px;
+  height: 220px;
+}
+
+.ni-card-title {
+  color: #ec8643;
+  font-weight: 700;
+}
+
+.ni-card-row {
+  margin-top: 20px;
+}
+
+.ni-card-badge {
+  border-radius: 0;
+}
+
+.ni-label {
+  font-weight: bold;
+}

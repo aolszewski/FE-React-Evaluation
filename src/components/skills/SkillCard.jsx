@@ -5,13 +5,8 @@ import {
   string,
   func,
 } from 'prop-types';
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  Badge,
-} from 'reactstrap';
 import { withRouter } from 'react-router-dom';
+import NiCard from '../NiCard';
 
 class SkillCard extends PureComponent {
   static propTypes = {
@@ -46,49 +41,16 @@ class SkillCard extends PureComponent {
 
   render() {
     const {
-      skill: {
-        name,
-        type,
-        color,
-        dateLearned,
-      },
+      skill,
       index,
     } = this.props;
 
     return (
-      <div className="skill-card-container">
-        <div className="skill-card-border">
-          <Card className="skill-card" onClick={this.drillDownOnSkill}>
-            <CardBody className="skill-card-body">
-              <CardTitle className="skill-card-title">Skill { index }</CardTitle>
-              <div className="row skill-card-row">
-                <div className="col-md-4 skill-label">
-                  NAME:
-                </div>
-                <div className="col-md-8">
-                  { name }
-                </div>
-              </div>
-              <div className="row skill-card-row">
-                <div className="col-md-4 skill-label">
-                  TYPE:
-                </div>
-                <div className="col-md-8">
-                  <Badge color={color} className="interest-card-badge">{ type }</Badge>
-                </div>
-              </div>
-              <div className="row skill-card-row">
-                <div className="col-md-4 skill-label">
-                  DATE LEARNED:
-                </div>
-                <div className="col-md-8">
-                  { dateLearned }
-                </div>
-              </div>
-            </CardBody>
-          </Card>
-        </div>
-      </div>
+      <NiCard
+        cardDetails={skill}
+        index={index}
+        drillDown={this.drillDownOnSkill}
+      />
     );
   }
 }

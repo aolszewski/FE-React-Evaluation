@@ -1,42 +1,10 @@
-.interest-card-title {
-  color: #ec8643;
-  font-weight: 700;
-}
-
 .interest-label {
   font-weight: bold;
-}
-
-.interest-card-body {
-  width: 355px;
-  height: 220px;
-}
-
-.interest-card {
-  background-color: #f4f9fd;
-  border: none;
-}
-
-.interest-card-row {
-  margin-top: 10px;
-}
-
-.interest-card-container {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
 .interest-list-row {
   margin-top: 20px;
   margin-bottom: 20px;
-}
-
-.interest-card-border {
-  border: 10px solid white;
-  border-radius: 0;
-
-  &:hover {
-    border: 10px solid #ec8643;
-  }
 }
 
 .interest-container {
@@ -48,10 +16,6 @@
 }
 
 .interest-badge {
-  border-radius: 0;
-}
-
-.interest-card-badge {
   border-radius: 0;
 }
 
